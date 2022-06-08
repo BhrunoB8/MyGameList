@@ -9,6 +9,19 @@ div{
     padding:20px
 }
 
+.round-field{
+  border-radius: 25px;
+}
+
+#search-field{
+  background-color: #D9D9D9;
+}
+#search{
+  float: center;
+}
+::placeholder{
+  color: black;
+}
 
 
 
