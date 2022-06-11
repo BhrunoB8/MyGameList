@@ -15,8 +15,9 @@ div {
 }
 
 #auth {
-  position: relative;
-  left: 1530px;
+  margin-left: 85%;
+  width: 50%;
+
 }
 
 
@@ -33,9 +34,11 @@ div {
 }
 
 #search {
-  position: relative;
-  left: 1500px;
+  position: absolute;
+  left: 70%;
 }
+
+
 
 ::placeholder {
   color: black;

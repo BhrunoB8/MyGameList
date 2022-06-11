@@ -13,6 +13,7 @@ import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import { CatalogoComponent } from './pages/catalogo/catalogo.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { LoginComponent } from './pages/login/login.component';
 
@@ -24,7 +25,8 @@ import { LoginComponent } from './pages/login/login.component';
     NavbarComponent,
     HomeComponent,
     CadastroComponent,
-    LoginComponent
+    LoginComponent,
+    CatalogoComponent
   ],
   imports: [
     BrowserModule,
