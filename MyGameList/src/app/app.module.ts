@@ -23,11 +23,8 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
     FooterComponent,
     NavbarComponent,
     HomeComponent,
-<<<<<<< HEAD
-    CatalogoComponent
-=======
+    CatalogoComponent,
     CadastroComponent
->>>>>>> 004b8c3eb0ed718e2b8003f3343bfb8efc4e772d
   ],
   imports: [
     BrowserModule,
