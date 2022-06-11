@@ -14,6 +14,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
     FooterComponent,
     NavbarComponent,
     HomeComponent,
-    CadastroComponent
+    CadastroComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
