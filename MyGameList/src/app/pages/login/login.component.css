@@ -2,11 +2,21 @@ input{
     margin-bottom: 5%;
 }
 
-.infocadastro{
+.infologin{
     margin-right: 5%;
     /* position: absolute; */
     top: 30%;
 }
+
+h2{
+   text-align: center;
+}
+
+button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+ }
+ 
 
 /* .cadastro{
     display: flex;
