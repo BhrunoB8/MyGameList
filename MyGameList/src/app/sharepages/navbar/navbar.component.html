@@ -1,6 +1,6 @@
 <div>
     <mat-toolbar color="primary">
-        <span> <a routerLink="/">MyGameList</a></span>
+        <span><a routerLink="/home">MyGameList</a></span>
     </mat-toolbar>
 
     <mat-form-field id="search">
@@ -8,11 +8,12 @@
     </mat-form-field>
 
     <mat-form-field id="auth">
-        <a>login</a>
+        <button mat-raised-button routerLink="/login">login</button>
         <a> / </a>
         <a>register</a>
         <a routerLink="/catalogo" >catalogo</a>
         <a routerLink="/teste" >teste</a>
+        <button mat-raised-button routerLink="/cadastro">register</button>
     </mat-form-field>
 
 </div>

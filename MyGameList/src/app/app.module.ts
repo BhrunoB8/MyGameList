@@ -18,6 +18,7 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { TesteComponent } from './pages/teste/teste.component';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './pages/login/login.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     CatalogoComponent,
     CadastroComponent,
-    TesteComponent
+    TesteComponent,
+    LoginComponent
   ],
   imports: [
     AppRoutingModule,

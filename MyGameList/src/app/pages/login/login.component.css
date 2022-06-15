@@ -1,0 +1,30 @@
+input{
+    margin-bottom: 5%;
+}
+
+.infologin{
+    margin-right: 5%;
+    /* position: absolute; */
+    top: 30%;
+}
+
+h2{
+   text-align: center;
+}
+
+button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+ }
+ 
+
+/* .cadastro{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    justify-items: end;
+}
+mat-form-field{
+    top:10px;
+    display: flex;
+} */
