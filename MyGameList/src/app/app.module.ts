@@ -16,6 +16,10 @@ import {MatButtonModule} from '@angular/material/button';
 import { CatalogoComponent } from './pages/catalogo/catalogo.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { LoginComponent } from './pages/login/login.component';
+import { PagFavComponent } from './pages/pag-fav/pag-fav.component';
+import { PagPretendejogarComponent } from './pages/pag-pretendejogar/pag-pretendejogar.component';
+import { PagDesistiuComponent } from './pages/pag-desistiu/pag-desistiu.component';
+import { PagPlatinouComponent } from './pages/pag-platinou/pag-platinou.component';
 
 
 @NgModule({
@@ -26,7 +30,11 @@ import { LoginComponent } from './pages/login/login.component';
     HomeComponent,
     CadastroComponent,
     LoginComponent,
-    CatalogoComponent
+    CatalogoComponent,
+    PagFavComponent,
+    PagPretendejogarComponent,
+    PagDesistiuComponent,
+    PagPlatinouComponent
   ],
   imports: [
     BrowserModule,
