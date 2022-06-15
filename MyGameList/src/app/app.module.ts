@@ -15,6 +15,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { CatalogoComponent } from './pages/catalogo/catalogo.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { TesteComponent } from './pages/teste/teste.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -24,18 +27,21 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
     NavbarComponent,
     HomeComponent,
     CatalogoComponent,
-    CadastroComponent
+    CadastroComponent,
+    TesteComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     BrowserAnimationsModule,
+    FlexLayoutModule,
     MatToolbarModule,
     MatFormFieldModule,
     MatCardModule,
-    FlexLayoutModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatPaginatorModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
