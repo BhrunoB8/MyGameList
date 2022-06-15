@@ -15,6 +15,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { CatalogoComponent } from './pages/catalogo/catalogo.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
 import { PagFavComponent } from './pages/pag-fav/pag-fav.component';
 import { PagPretendejogarComponent } from './pages/pag-pretendejogar/pag-pretendejogar.component';
@@ -28,6 +30,7 @@ import { PagPlatinouComponent } from './pages/pag-platinou/pag-platinou.componen
     FooterComponent,
     NavbarComponent,
     HomeComponent,
+    CatalogoComponent,
     CadastroComponent,
     LoginComponent,
     CatalogoComponent,
@@ -37,15 +40,17 @@ import { PagPlatinouComponent } from './pages/pag-platinou/pag-platinou.componen
     PagPlatinouComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     BrowserAnimationsModule,
+    FlexLayoutModule,
     MatToolbarModule,
     MatFormFieldModule,
     MatCardModule,
-    FlexLayoutModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatPaginatorModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
