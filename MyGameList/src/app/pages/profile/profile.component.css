@@ -1,0 +1,33 @@
+.container img{
+    max-width:26%;
+    max-height:26%;
+    width: auto;
+    height: auto;
+    padding-top: 1%;
+}
+
+#butprofile{
+   background-color: #ECE8E6;
+   margin-left: 15%;
+   margin-right: 15%;
+   padding-left:1%;
+   padding-bottom:1%;
+}
+
+.row{
+    margin-top: 5%;
+}
+
+#botoes{
+    padding-top: 5%;
+}
+
+button{
+    margin-top: 1%;
+}
+
+#divChart{
+    display: block;
+    width: 400px;
+    height: 400px;
+}

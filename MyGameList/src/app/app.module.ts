@@ -18,7 +18,11 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
-
+import { PagFavComponent } from './pages/pag-fav/pag-fav.component';
+import { PagPretendejogarComponent } from './pages/pag-pretendejogar/pag-pretendejogar.component';
+import { PagDesistiuComponent } from './pages/pag-desistiu/pag-desistiu.component';
+import { PagPlatinouComponent } from './pages/pag-platinou/pag-platinou.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,13 @@ import { LoginComponent } from './pages/login/login.component';
     HomeComponent,
     CatalogoComponent,
     CadastroComponent,
-    LoginComponent
+    LoginComponent,
+    CatalogoComponent,
+    PagFavComponent,
+    PagPretendejogarComponent,
+    PagDesistiuComponent,
+    PagPlatinouComponent,
+    ProfileComponent
   ],
   imports: [
     AppRoutingModule,
