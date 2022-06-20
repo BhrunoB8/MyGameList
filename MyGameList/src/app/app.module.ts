@@ -22,6 +22,7 @@ import { PagFavComponent } from './pages/pag-fav/pag-fav.component';
 import { PagPretendejogarComponent } from './pages/pag-pretendejogar/pag-pretendejogar.component';
 import { PagDesistiuComponent } from './pages/pag-desistiu/pag-desistiu.component';
 import { PagPlatinouComponent } from './pages/pag-platinou/pag-platinou.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { PagPlatinouComponent } from './pages/pag-platinou/pag-platinou.componen
     PagFavComponent,
     PagPretendejogarComponent,
     PagDesistiuComponent,
-    PagPlatinouComponent
+    PagPlatinouComponent,
+    ProfileComponent
   ],
   imports: [
     AppRoutingModule,
