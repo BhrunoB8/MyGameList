@@ -1,19 +1,25 @@
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <div id="butprofile">
     <div class="container">
         <img src="\assets\avatar icon.jpg">
+        <div>
+            <div id="barras" fxLayout="column">
+                <mat-progress-bar mode="determinate" value="33" color="warn"> a</mat-progress-bar>
+                <mat-progress-bar mode="determinate" value="55" color="primary"></mat-progress-bar>
+                <mat-progress-bar mode="determinate" value="40" color="accent"></mat-progress-bar>
+            </div>
+            <div class="legenda">
+                <h4>Completou</h4>
+                <h4>Desistiu</h4>
+                <h4>Pretende Jogar</h4>
+            </div>
+        </div>
     </div>
 
-    <div id="botoes" fxLayout="column" fxLayoutAlign="space-around start" >
+    <div id="botoes" fxLayout="column" fxLayoutAlign="space-around start">
         <button mat-raised-button routerLink="/catalogo">Catálogo de Jogos</button>
         <button mat-raised-button routerLink="/pag-fav">Jogos</button>
         <button mat-raised-button routerLink="/ranking">Ranking Geral</button>
     </div>
-
-    <div id="divChart">
-        <canvas id="myChart"></canvas>
-    </div>
 </div>
-

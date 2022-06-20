@@ -26,8 +26,16 @@ button{
     margin-top: 1%;
 }
 
-#divChart{
-    display: block;
-    width: 400px;
-    height: 400px;
+mat-progress-bar{
+    padding-top: 2%;
+    width: 30%;
+}
+
+#barras{
+    padding-right: 5%;
+}
+
+.legenda h4{
+    font-size: 80%;
+    padding-top: 0%;
 }
