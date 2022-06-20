@@ -24,7 +24,6 @@ import { PagDesistiuComponent } from './pages/pag-desistiu/pag-desistiu.componen
 import { PagPlatinouComponent } from './pages/pag-platinou/pag-platinou.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

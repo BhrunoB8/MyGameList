@@ -8,7 +8,8 @@ import { Chart } from 'chart.js';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+ 
+  constructor() {}
 
   ngOnInit(): void {
     
