@@ -16,7 +16,6 @@ import {MatButtonModule} from '@angular/material/button';
 import { CatalogoComponent } from './pages/catalogo/catalogo.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import { TesteComponent } from './pages/teste/teste.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
 
@@ -29,7 +28,6 @@ import { LoginComponent } from './pages/login/login.component';
     HomeComponent,
     CatalogoComponent,
     CadastroComponent,
-    TesteComponent,
     LoginComponent
   ],
   imports: [
