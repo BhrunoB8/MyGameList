@@ -1,0 +1,21 @@
+<div id="selecao">
+    <div id="row" class="row" fxLayout="row wrap" fxLayoutAlign="space-evenly">
+        <div *ngFor="let item of list">
+
+            <mat-card class="card">
+                <mat-card-header>
+                </mat-card-header>
+                <img mat-card-image src="\assets\Dead_By_Daylight.png">
+                <mat-card-title>{{item.nome}}</mat-card-title>
+                <mat-card-actions>
+                    <button mat-button>
+                        <mat-icon>favorite_border</mat-icon>
+                    </button>
+                    <button mat-button>
+                        <mat-icon>star_border</mat-icon>
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

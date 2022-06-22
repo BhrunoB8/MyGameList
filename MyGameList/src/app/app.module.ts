@@ -23,6 +23,9 @@ import { PagPretendejogarComponent } from './pages/pag-pretendejogar/pag-pretend
 import { PagDesistiuComponent } from './pages/pag-desistiu/pag-desistiu.component';
 import { PagPlatinouComponent } from './pages/pag-platinou/pag-platinou.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { RankingComponent } from './pages/ranking/ranking.component';
+import { EvaluateComponent } from './sharepages/Modals/evaluate/evaluate.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import { ProfileComponent } from './pages/profile/profile.component';
     PagPretendejogarComponent,
     PagDesistiuComponent,
     PagPlatinouComponent,
-    ProfileComponent
+    ProfileComponent,
+    RankingComponent,
+    EvaluateComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -51,7 +56,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
     MatIconModule,
     MatButtonModule,
     MatPaginatorModule,
-    FormsModule
+    FormsModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
