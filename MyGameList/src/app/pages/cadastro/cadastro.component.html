@@ -5,15 +5,21 @@
         <p>Username:</p>
         <p>Email:</p>
         <p>Password:</p>
+        <p>Confirm Password:</p>
     </div>
 
     <mat-form-field>
-        <input id="username" class="cadastrouser" matInput [(ngModel)]="username_placeholder" placeholder="Username">
-        <input id="email" class="cadastroemail" matInput placeholder="Email">
-        <input id="password" class="cadastrosenha" matInput placeholder="Password">
+        <input id="username" class="cadastrouser" placeholder="Username" [(ngModel)]="currentUser">
+        <input id="email" class="cadastroemail" matInput placeholder="Email" [(ngModel)]="currentEmail">
+        <input id="password" type="password" class="cadastrosenha" matInput placeholder="Password"
+            [(ngModel)]="currentPassword">
+        <input id="password" type="password" class="cadastrosenha" matInput placeholder="Password"
+            [(ngModel)]="currentConfirmPassword" (change)="verifyPasswords()" [style]="styliz()">
+
+        <a>{{warningMessage}}</a>
     </mat-form-field>
 </div>
 
-<div  fxLayout="column" fxLayoutAlign="center center">
-    <button mat-raised-button color="primary">Confirmar</button>
+<div fxLayout="column" fxLayoutAlign="center center">
+    <button mat-raised-button color="primary" (click)="getAllValues()">Confirmar</button>
 </div>
