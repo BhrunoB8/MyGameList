@@ -1,8 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-
-import { EvaluateComponent } from 'src/app/sharepages/Modals/evaluate/evaluate.component';
-
 
 @Component({
   selector: 'app-home',
@@ -11,17 +7,7 @@ import { EvaluateComponent } from 'src/app/sharepages/Modals/evaluate/evaluate.c
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
-
-  addGameEvaluation(): void {
-    const dialogRef = this.dialog.open(EvaluateComponent, {
-      width: '250px',
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-        console.log('The dialog was closed');
-    });
-  }
+  constructor() { }
 
   ngOnInit(): void {
   }
