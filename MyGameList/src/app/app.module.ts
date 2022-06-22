@@ -23,7 +23,6 @@ import { PagPretendejogarComponent } from './pages/pag-pretendejogar/pag-pretend
 import { PagDesistiuComponent } from './pages/pag-desistiu/pag-desistiu.component';
 import { PagPlatinouComponent } from './pages/pag-platinou/pag-platinou.component';
 import { ProfileComponent } from './pages/profile/profile.component';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -52,8 +51,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatIconModule,
     MatButtonModule,
     MatPaginatorModule,
-    FormsModule,
-    MatProgressBarModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

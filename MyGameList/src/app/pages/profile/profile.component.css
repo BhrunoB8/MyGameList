@@ -26,24 +26,8 @@ button{
     margin-top: 1%;
 }
 
-mat-progress-bar{
-    padding-top: 2.65%;
-    width: 30%;
-}
-
-#barras{
-    padding-right: 5%;
-    margin-left: 15%;
-    display: flex;
-}
-
-.legenda h4{
-    font-size: 80%;
-    padding-top: 0%;
-    margin-bottom: -6%;
-}
-
-.legenda{
-    text-align:left;
-    display: flex;
+#divChart{
+    display: block;
+    width: 400px;
+    height: 400px;
 }
