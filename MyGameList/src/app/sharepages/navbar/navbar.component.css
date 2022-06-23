@@ -8,7 +8,7 @@ span {
 div {
   background-color: #3f51b5;
   /* padding: 20px */
-  padding: 3%;
+  /* padding: 3%; */
 }
 
 .round-field {
@@ -18,17 +18,12 @@ div {
 }
 
 #auth {
-  margin-left: 85%;
+  margin-left: 84%;
   width: 50%;
-  padding-left: 11%;
+  /* padding-left: 11%; */
+  
 
 }
-
-#search-field{
-  position:right ;
-  width: 95%;
-}
-
 
 .profile-round {
   height: 35px;
@@ -40,13 +35,20 @@ div {
 
 #search-field {
   background-color: #D9D9D9;
-}
-
-#search {
-  position: absolute;
-  left: 70%;
+  /* width: 150px; */
+  min-width: 50px;
+  max-width: 250px;
 }
 
 ::placeholder {
   color: black;
+}
+
+#home{
+  color: white;
+}
+
+#botoes{
+  padding: 2%;
+  margin-left: 5%;
 }
