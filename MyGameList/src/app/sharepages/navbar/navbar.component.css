@@ -1,23 +1,32 @@
 span {
   color: white;
-  font-size: 45px;
+  /* font-size: 45px; */
+  font-size: 200%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
 div {
   background-color: #3f51b5;
-  padding: 20px
+  /* padding: 20px */
+  padding: 3%;
 }
 
 .round-field {
   border-radius: 15px;
-  height: 20px;
+  /* height: 20px; */
+  height: 50%;
 }
 
 #auth {
   margin-left: 85%;
   width: 50%;
+  padding-left: 11%;
 
+}
+
+#search-field{
+  position:right ;
+  width: 95%;
 }
 
 
@@ -37,8 +46,6 @@ div {
   position: absolute;
   left: 70%;
 }
-
-
 
 ::placeholder {
   color: black;

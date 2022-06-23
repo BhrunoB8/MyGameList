@@ -3,19 +3,14 @@
         <span><a routerLink="/home">MyGameList</a></span>
     </mat-toolbar>
 
-    <mat-form-field id="search">
-        <input id="search-field" class="round-field" type="text" matInput placeholder="Search">
-    </mat-form-field>
-
-    <mat-form-field id="auth">
-        <button mat-raised-button routerLink="/login">login</button>
-        <a> / </a>
-        <!-- <a>register</a>
-        <a routerLink="/catalogo" >catalogo</a>
-        <a routerLink="/teste" >teste</a> -->
-        <button mat-raised-button routerLink="/cadastro">register</button>
-        <!-- <button mat-raised-button routerLink="/catalogo">Catalogo</button> -->
-        <!-- <button mat-raised-button routerLink="/pag-fav">TESTE FAV</button> -->
-    </mat-form-field>
-
+    <div fxLayout="row" fxLayoutAlign="space-evenly center">
+        <mat-form-field id="search">
+                <input id="search-field" class="round-field" type="text" matInput placeholder="Search">
+        </mat-form-field>
+        <mat-form-field id="auth">
+            <button mat-raised-button routerLink="/login">login</button>
+            <a> / </a>
+            <button mat-raised-button routerLink="/cadastro">register</button>
+        </mat-form-field>
+    </div>
 </div>
