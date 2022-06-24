@@ -7,15 +7,15 @@ import { FooterComponent } from './sharepages/footer/footer.component';
 import { NavbarComponent } from './sharepages/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatCardModule} from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { CatalogoComponent } from './pages/catalogo/catalogo.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
-import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
 import { PagFavComponent } from './pages/pag-fav/pag-fav.component';
@@ -23,7 +23,7 @@ import { PagPretendejogarComponent } from './pages/pag-pretendejogar/pag-pretend
 import { PagDesistiuComponent } from './pages/pag-desistiu/pag-desistiu.component';
 import { PagPlatinouComponent } from './pages/pag-platinou/pag-platinou.component';
 import { ProfileComponent } from './pages/profile/profile.component';
-
+import { CookieService } from 'ngx-cookie-service'
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,9 +51,9 @@ import { ProfileComponent } from './pages/profile/profile.component';
     MatIconModule,
     MatButtonModule,
     MatPaginatorModule,
-    FormsModule
+    FormsModule,
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

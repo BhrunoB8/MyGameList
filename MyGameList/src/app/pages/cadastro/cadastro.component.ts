@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-
+import { CookieService } from 'ngx-cookie-service'
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.css']
 })
 export class CadastroComponent implements OnInit {
-  constructor() { }
+  constructor(private cookie: CookieService) { }
 
   currentUser: string;
   currentPassword: string;
@@ -17,6 +17,7 @@ export class CadastroComponent implements OnInit {
   getAllValues() {
     if (this.verifyPasswords()) {
       console.log(this.currentUser, this.currentEmail, this.currentPassword, this.currentConfirmPassword);
+      this.cookie.set('user', this.currentUser);
     }
   }
 
