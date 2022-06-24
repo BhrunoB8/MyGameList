@@ -1,20 +1,17 @@
 <div>
     <mat-toolbar color="primary">
-        <span><a routerLink="/home">MyGameList</a></span>
+        <span><a id="home" routerLink="/home">MyGameList</a></span>
     </mat-toolbar>
 
-    <mat-form-field id="search">
-        <input id="search-field" class="round-field" type="text" matInput placeholder="Search">
-    </mat-form-field>
-
-    <mat-form-field id="auth">
-        <button mat-raised-button routerLink="/login">login</button>
-        <a> / </a>
-        <!-- <a>register</a>
-        <a routerLink="/catalogo" >catalogo</a>
-        <a routerLink="/teste" >teste</a> -->
-        <button mat-raised-button routerLink="/cadastro">register</button>
-        <!-- <button mat-raised-button routerLink="/pag-fav">TESTE FAV</button> -->
-    </mat-form-field>
-
+    <div fxLayout="row" fxLayoutAlign="space-evenly center">
+        <div fxFlex="0 1 calc(33.3% - 11px)" fxFlex.lt-md="0 1 calc(50% - 11px)" fxFlex.lt-sm="100%">
+            
+                <input id="search-field" class="round-field" type="text" matInput placeholder="Search">
+            
+        </div>
+        <div id="botoes" fxLayout="row" fxLayoutAlign="space-evenly center">
+            <button mat-raised-button routerLink="/login">login</button>
+            <button mat-raised-button routerLink="/cadastro">register</button>
+        </div>
+    </div>
 </div>

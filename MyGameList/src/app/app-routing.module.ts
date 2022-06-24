@@ -10,6 +10,7 @@ import { PagFavComponent } from './pages/pag-fav/pag-fav.component';
 import { PagPlatinouComponent } from './pages/pag-platinou/pag-platinou.component';
 import { PagPretendejogarComponent } from './pages/pag-pretendejogar/pag-pretendejogar.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { RankingComponent } from './pages/ranking/ranking.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path:'pag-pretendejogar',component:PagPretendejogarComponent},
   {path:'pag-desistiu',component:PagDesistiuComponent},
   {path:'pag-platinou',component:PagPlatinouComponent},
-  {path:'profile',component:ProfileComponent}
+  {path:'profile',component:ProfileComponent},
+  {path:'ranking',component:RankingComponent}
 ];
 
 @NgModule({

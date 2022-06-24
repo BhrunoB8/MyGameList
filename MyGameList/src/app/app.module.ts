@@ -24,6 +24,10 @@ import { PagDesistiuComponent } from './pages/pag-desistiu/pag-desistiu.componen
 import { PagPlatinouComponent } from './pages/pag-platinou/pag-platinou.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CookieService } from 'ngx-cookie-service'
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { RankingComponent } from './pages/ranking/ranking.component';
+import { EvaluateComponent } from './sharepages/Modals/evaluate/evaluate.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +42,9 @@ import { CookieService } from 'ngx-cookie-service'
     PagPretendejogarComponent,
     PagDesistiuComponent,
     PagPlatinouComponent,
-    ProfileComponent
+    ProfileComponent,
+    RankingComponent,
+    EvaluateComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -52,6 +58,7 @@ import { CookieService } from 'ngx-cookie-service'
     MatButtonModule,
     MatPaginatorModule,
     FormsModule,
+    MatProgressBarModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]
