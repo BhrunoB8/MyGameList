@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Jogo } from 'src/app/Models/Jogo';
 
 @Component({
   selector: 'app-pag-desistiu',
@@ -11,5 +12,10 @@ export class PagDesistiuComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  list=[{nome:"Dead by Daylight"}, {nome:"Resident Evil"}, {nome: "Grand Theft Auto V"}];
+  list = [
+    new Jogo('Rainbow Six Siege', "\\assets\\r6.jpg"),
+    new Jogo('Bloons TD 6', "\\assets\\bloonsTD.jpg"),
+    new Jogo('Cs: Go', "\\assets\\csgo-capa.jpg"),
+    new Jogo('God of War', "\\assets\\gow.jpg"),
+  ]
 }

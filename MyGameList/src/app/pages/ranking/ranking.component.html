@@ -1,5 +1,9 @@
+
+
 <div id="selecao">
-    <div id="row" class="row" fxLayout="row wrap" fxLayoutAlign="space-evenly">
+
+    <div id="coluna" class="row" fxLayout="column" fxLayoutAlign="space-evenly center">
+        <h1>Ranking</h1>
         <div *ngFor="let item of list">
 
             <mat-card class="card">
@@ -16,6 +20,18 @@
                     </button>
                 </mat-card-actions>
             </mat-card>
+
+            <!-- <div id="avaliacao"  fxLayout="column" fxLayoutAlign="space-evenly end">
+                <mat-form-field>
+                    <mat-icon id="stars">stars</mat-icon>
+                 
+                </mat-form-field>
+            </div> -->
+            <div id="avaliacao" fxLayout="row" fxLayoutAlign="start center">
+                    <mat-icon id="stars">stars</mat-icon>
+                    <p>9.98</p>
+            </div>
         </div>
+
     </div>
 </div>

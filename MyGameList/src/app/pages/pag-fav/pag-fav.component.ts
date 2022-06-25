@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Jogo } from 'src/app/Models/Jogo';
 
 @Component({
   selector: 'app-pag-fav',
@@ -11,5 +12,10 @@ export class PagFavComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  list=[{nome:"Dead by Daylight"}, {nome:"Resident Evil"}, {nome: "Grand Theft Auto V"}];
+  list = [
+    new Jogo(`Dead by Daylight`, "\\assets\\Dead_By_Daylight.png"),
+    new Jogo('Resident Evil 2', "\\assets\\Dead_By_Daylight.png"),
+    new Jogo('Grand Theft Auto V', "\\assets\\Dead_By_Daylight.png"),
+    new Jogo('Fifa', "\\assets\\Dead_By_Daylight.png"),
+  ]
 }

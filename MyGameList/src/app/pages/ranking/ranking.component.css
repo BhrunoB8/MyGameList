@@ -1,13 +1,37 @@
-#selecao{
-    background-color: #ECE8E6;
-    margin-left: 15%;
-    margin-right: 15%;
- }
- 
- .row{
- margin-top: 20px;
- }
- 
- #botoes{
-    padding-top: 10px;
- }
+#selecao {
+   background-color: #ECE8E6;
+   margin-left: 15%;
+   margin-right: 15%;
+}
+
+.row {
+   margin-top: 20px;
+}
+
+#botoes {
+   padding-top: 10px;
+}
+
+/* #coluna{
+   margin-left: 15%;
+ } */
+
+.card {
+   margin-bottom: 7%;
+   margin-top: 2%;
+}
+
+#avaliacao {
+   background-color: rgb(158, 148, 148);
+   display: inline;
+}
+
+p {
+  margin-top: 5%;
+  font-size: 95%;
+}
+
+
+ .mat-icon {
+   padding: 5%;
+}

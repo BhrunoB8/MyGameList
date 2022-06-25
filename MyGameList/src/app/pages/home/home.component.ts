@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Jogo } from 'src/app/Models/Jogo';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+// this.Jogo = new Jogo();
+  }
 
   ngOnInit(): void {
   }
 
-list=[{nome:"Dead by Daylight"}, {nome:"Resident Evil"}, {nome: "Grand Theft Auto V"}];
+  // list=[{nome:"Dead by Daylight"}, {nome:"Resident Evil"}, {nome: "Grand Theft Auto V"}];
+
+  list = [
+    new Jogo(`Dead by Daylight`, "\\assets\\Dead_By_Daylight.png"),
+    new Jogo('Resident Evil 2', "\\assets\\re2rmk.png"),
+    new Jogo('Grand Theft Auto V', "\\assets\\Grand_Theft_Auto_V_capa.png"),
+  ]
 
 }
 
