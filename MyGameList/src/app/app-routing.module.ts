@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuardService, LoggedGuard } from './auth-guard.service';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { CatalogoComponent } from './pages/catalogo/catalogo.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -13,17 +14,20 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { RankingComponent } from './pages/ranking/ranking.component';
 
 const routes: Routes = [
-  {path:'',component:HomeComponent},
-  {path:'cadastro',component:CadastroComponent},
-  {path:'catalogo',component:CatalogoComponent},
-  {path:'home',component:HomeComponent},
-  {path:'login',component:LoginComponent},
-  {path:'pag-fav',component:PagFavComponent},
-  {path:'pag-pretendejogar',component:PagPretendejogarComponent},
-  {path:'pag-desistiu',component:PagDesistiuComponent},
-  {path:'pag-platinou',component:PagPlatinouComponent},
-  {path:'profile',component:ProfileComponent},
-  {path:'ranking',component:RankingComponent}
+  { path: 'cadastro', component: CadastroComponent, canActivate: [AuthGuardService] },
+  { path: 'login', component: LoginComponent, canActivate: [AuthGuardService] },
+  { path: 'catalogo', component: CatalogoComponent },
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+
+  { path: 'pag-fav', component: PagFavComponent, canActivate: [LoggedGuard] },
+  { path: 'pag-pretendejogar', component: PagPretendejogarComponent, canActivate: [LoggedGuard] },
+  { path: 'pag-desistiu', component: PagDesistiuComponent, canActivate: [LoggedGuard] },
+  { path: 'pag-platinou', component: PagPlatinouComponent, canActivate: [LoggedGuard] },
+  { path: 'profile', component: ProfileComponent, canActivate: [LoggedGuard] },
+
+
+  { path: 'ranking', component: RankingComponent }
 ];
 
 @NgModule({
