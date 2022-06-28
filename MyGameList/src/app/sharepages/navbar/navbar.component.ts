@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth-service';
 
 @Component({
@@ -8,12 +9,34 @@ import { AuthService } from 'src/app/auth-service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService, private router: Router) { }
+
+  showForm: boolean = !this.auth.isAuthenticated();
+  showProfile: boolean = this.auth.isAuthenticated();
+  menuOpened: boolean = false;
 
   ngOnInit(): void {
+    this.auth.mostrarForm.subscribe(
+      value => {
+        this.showForm = value;
+      }
+    )
+    this.auth.mostrarProfile.subscribe(
+      value => {
+        this.showProfile = value;
+      }
+    )
   }
 
+  showMenu() {
+    this.menuOpened = !this.menuOpened;
+  }
+
+  
+
   logout() {
-    this.auth.logout()
+    if (this.auth.logout()) {
+      this.router.navigateByUrl('/home')
+    }
   }
 }

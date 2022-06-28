@@ -5,14 +5,29 @@
 
     <div fxLayout="row" fxLayoutAlign="space-evenly center">
         <div fxFlex="0 1 calc(33.3% - 11px)" fxFlex.lt-md="0 1 calc(50% - 11px)" fxFlex.lt-sm="100%">
-            
-                <input id="search-field" class="round-field" type="text" matInput placeholder="Search">
-            
+
+            <input id="search-field" class="round-field" type="text" matInput placeholder="Search">
+
         </div>
-        <div id="botoes" fxLayout="row" fxLayoutAlign="space-evenly center">
-            <button mat-raised-button routerLink="/login">login</button>
-            <button mat-raised-button routerLink="/cadastro">register</button>
-            <button mat-raised-button (click)="logout()">logout</button>
-        </div>
+        <nav *ngIf="showForm">
+            <div id="botoes" fxLayout="row" fxLayoutAlign="space-evenly center">
+                <button mat-raised-button routerLink="/login">login</button>
+                <button mat-raised-button routerLink="/cadastro">register</button>
+                <button mat-raised-button (click)="logout()">logout</button>
+            </div>
+        </nav>
+
+        <nav *ngIf="showProfile">
+            <div class="menu-container">
+                <div class="menuToggler" (click)="showMenu()"> <img src="../../../assets/avatar icon.jpg" width="30px">
+                </div>
+                <div class="menu" *ngIf="menuOpened">
+                    <div class="menuItem" routerLink="/profile"> perfil </div>
+                    <div class="menuItem" routerLink="/pag-fav"> meus favoritos </div>
+                    <div class="menuItem"> meus amigos</div>
+                    <div class="menuItem" (click)="logout()"> logout </div>
+                </div>
+            </div>
+        </nav>
     </div>
 </div>

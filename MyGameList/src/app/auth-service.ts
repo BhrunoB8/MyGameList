@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { EventEmitter, Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { CookieService } from "ngx-cookie-service";
 
@@ -8,11 +8,13 @@ export class AuthService {
     }
 
     loggedIn: boolean = this.verify();
+    mostrarForm = new EventEmitter<boolean>();
+    mostrarProfile = new EventEmitter<boolean>();
 
-    verify(){
-        if(!this.cookie.get('token')){
+    verify() {
+        if (!this.cookie.get('token')) {
             return false;
-        }else{
+        } else {
             return true;
         }
     }
@@ -21,7 +23,8 @@ export class AuthService {
         if (user == 'admin' && password == 'admin') {
             this.cookie.set('token', user);
             this.loggedIn = true;
-            console.log(this.loggedIn)
+            this.mostrarForm.emit(false);
+            this.mostrarProfile.emit(true)
             return true;
         } else {
             return false;
@@ -31,10 +34,12 @@ export class AuthService {
     logout() {
         this.cookie.delete('token');
         this.loggedIn = false;
-        this.router.navigateByUrl('/home')
+        this.mostrarProfile.emit(false)
+        this.mostrarForm.emit(true);
+        return true
     }
 
-    isAuthenticated(){
+    isAuthenticated() {
         return this.loggedIn
     }
 
