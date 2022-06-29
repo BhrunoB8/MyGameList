@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Jogo } from 'src/app/Models/Jogo';
 
 @Component({
   selector: 'app-pag-platinou',
@@ -11,5 +12,10 @@ export class PagPlatinouComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  list=[{nome:"Dead by Daylight"}, {nome:"Resident Evil"}, {nome: "Free Fire"}];
+  list = [
+    new Jogo(`Dead by Daylight`, "\\assets\\Dead_By_Daylight.png"),
+    new Jogo('Resident Evil 2', "\\assets\\re2rmk.png"),
+    new Jogo('GTA V', "\\assets\\Grand_Theft_Auto_V_capa.png"),
+    new Jogo('Red Dead 2', "\\assets\\reddead.jpg"),
+    new Jogo('Stardew Valley', "\\assets\\stardewValley.png")]
 }

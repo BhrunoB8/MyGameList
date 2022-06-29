@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Jogo } from 'src/app/Models/Jogo';
 
 @Component({
   selector: 'app-pag-pretendejogar',
@@ -11,5 +12,10 @@ export class PagPretendejogarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-list=[{nome:"Dead by Daylight"}, {nome:"Resident Evil"}, {nome: "Free Fire"}];
+  list = [
+    new Jogo(`Elden Ring`, "\\assets\\Elden_Ring_capa.jpg"),
+    new Jogo('Cuphead', "\\assets\\cuphead.png"),
+    new Jogo('Borderlands 2', "\\assets\\Borderlands2.jpg"),
+    new Jogo('Far Cry 3', "\\assets\\Far_cry_3.jpg"),
+  ]
 }

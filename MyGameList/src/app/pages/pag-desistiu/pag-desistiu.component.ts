@@ -13,8 +13,8 @@ export class PagDesistiuComponent implements OnInit {
   ngOnInit(): void {
   }
   list = [
-    new Jogo('Rainbow Six Siege', "\\assets\\r6.jpg"),
-    new Jogo('Bloons TD 6', "\\assets\\bloonsTD.jpg"),
+    new Jogo('Rainbow Six Siege', "\\assets\\rain6.jpg"),
+    new Jogo('Bloons TD 6', "\\assets\\bloons.jpg"),
     new Jogo('Cs: Go', "\\assets\\csgo-capa.jpg"),
     new Jogo('God of War', "\\assets\\gow.jpg"),
   ]

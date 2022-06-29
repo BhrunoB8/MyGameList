@@ -14,8 +14,8 @@ export class PagFavComponent implements OnInit {
   }
   list = [
     new Jogo(`Dead by Daylight`, "\\assets\\Dead_By_Daylight.png"),
-    new Jogo('Resident Evil 2', "\\assets\\Dead_By_Daylight.png"),
-    new Jogo('Grand Theft Auto V', "\\assets\\Dead_By_Daylight.png"),
-    new Jogo('Fifa', "\\assets\\Dead_By_Daylight.png"),
+    new Jogo('Resident Evil 2', "\\assets\\re2rmk.png"),
+    new Jogo('GTA V', "\\assets\\Grand_Theft_Auto_V_capa.png"),
+    new Jogo('Red Dead 2', "\\assets\\reddead.jpg"),
   ]
 }

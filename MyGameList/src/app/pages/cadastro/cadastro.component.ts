@@ -19,9 +19,9 @@ export class CadastroComponent implements OnInit {
   getAllValues() {
     if (this.verifyPasswords()) {
       console.log(this.currentUser, this.currentEmail, this.currentPassword, this.currentConfirmPassword);
-      if(this.auth.login(this.currentUser, this.currentPassword)){
+      if (this.auth.login(this.currentUser, this.currentPassword)) {
         this.router.navigateByUrl('/home')
-      }else{
+      } else {
         alert('Erro')
       }
     }

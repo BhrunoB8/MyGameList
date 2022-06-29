@@ -1,49 +1,50 @@
-.container img{
-    max-width:26%;
-    max-height:26%;
+.container img {
+    max-width: 26%;
+    max-height: 26%;
     width: auto;
     height: auto;
     padding-top: 1%;
 }
 
-#butprofile{
-   background-color: #ECE8E6;
-   margin-left: 15%;
-   margin-right: 15%;
-   padding-left:1%;
-   padding-bottom:1%;
+#butprofile {
+    background-color: #ECE8E6;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-left: 1%;
+    padding-bottom: 1%;
 }
 
-.row{
+.row {
     margin-top: 5%;
 }
 
-#botoes{
+#botoes {
     padding-top: 5%;
 }
 
-button{
+button {
     margin-top: 1%;
 }
 
-mat-progress-bar{
+mat-progress-bar {
     padding-top: 2.65%;
     width: 30%;
 }
 
-#barras{
+#barras {
     padding-right: 5%;
     margin-left: 15%;
     display: flex;
 }
 
-.legenda h4{
+.legenda h4 {
     font-size: 80%;
     padding-top: 0%;
     margin-bottom: -6%;
 }
 
-.legenda{
-    text-align:left;
+.legenda {
+    text-align: left;
     display: flex;
 }
+

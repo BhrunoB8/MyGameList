@@ -13,19 +13,20 @@
             <div id="botoes" fxLayout="row" fxLayoutAlign="space-evenly center">
                 <button mat-raised-button routerLink="/login">login</button>
                 <button mat-raised-button routerLink="/cadastro">register</button>
-                <button mat-raised-button (click)="logout()">logout</button>
             </div>
         </nav>
 
         <nav *ngIf="showProfile">
             <div class="menu-container">
-                <div class="menuToggler" (click)="showMenu()"> <img src="../../../assets/avatar icon.jpg" width="30px">
+                <div class="menuToggler" (click)="showMenu()"> <img src="../../../assets/avatar icon.jpg"
+                        style="width: 90px; border-radius: 100px;">
                 </div>
                 <div class="menu" *ngIf="menuOpened">
-                    <div class="menuItem" routerLink="/profile"> perfil </div>
-                    <div class="menuItem" routerLink="/pag-fav"> meus favoritos </div>
-                    <div class="menuItem"> meus amigos</div>
-                    <div class="menuItem" (click)="logout()"> logout </div>
+                    <div class="menuItem" routerLink="/profile" (click)="showMenu()"> perfil </div>
+                    <div class="menuItem" routerLink="/pag-fav" (click)="showMenu()"> meus jogos </div>
+                    <div class="menuItem" routerLink="/catalogo" (click)="showMenu()">catálogo</div>
+                    <!-- <div class="menuItem" (click)="showMenu()"> meus amigos</div> -->
+                    <div class="menuItem" (click)="logout()"> deslogar </div>
                 </div>
             </div>
         </nav>

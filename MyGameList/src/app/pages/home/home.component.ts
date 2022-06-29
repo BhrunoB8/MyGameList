@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   list = [
     new Jogo(`Dead by Daylight`, "\\assets\\Dead_By_Daylight.png"),
     new Jogo('Resident Evil 2', "\\assets\\re2rmk.png"),
-    new Jogo('Grand Theft Auto V', "\\assets\\Grand_Theft_Auto_V_capa.png"),
+    new Jogo('GTA V', "\\assets\\Grand_Theft_Auto_V_capa.png"),
   ]
 
 }

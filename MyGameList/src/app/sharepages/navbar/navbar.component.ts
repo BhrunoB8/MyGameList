@@ -35,6 +35,7 @@ export class NavbarComponent implements OnInit {
   
 
   logout() {
+    this.showMenu();
     if (this.auth.logout()) {
       this.router.navigateByUrl('/home')
     }
