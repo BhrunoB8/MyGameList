@@ -9,8 +9,26 @@
     </div>
 
     <mat-form-field>
-        <input id="username" class="cadastrouser" placeholder="Username" [(ngModel)]="currentUser">
-        <input id="email" class="cadastroemail" matInput placeholder="Email" [(ngModel)]="currentEmail">
+        <input type="text" id="name" name="name" class="form-control" required minlength="4" [(ngModel)]="currentUser"
+            #name="ngModel" placeholder="Username">
+
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
+
+            <div *ngIf="name.errors?.['required']">
+                Username é obrigatório
+            </div>
+            <div *ngIf="name.errors?.['minlength']">
+                User name precisa ter pelo menos 4 caracteres
+            </div>
+        </div>
+
+        <input id="email" class="cadastroemail" matInput placeholder="Email" [(ngModel)]="currentEmail" required #email="ngModel">
+        <div *ngIf="email.invalid && (name.dirty || name.touched)" class="alert">
+
+            <div *ngIf="email.errors?.['required']">
+                Email é obrigatório
+            </div>
+        </div>
         <input id="password" type="password" class="cadastrosenha" matInput placeholder="Password"
             [(ngModel)]="currentPassword">
         <input id="password" type="password" class="cadastrosenha" matInput placeholder="Password"

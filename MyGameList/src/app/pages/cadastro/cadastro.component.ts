@@ -34,6 +34,10 @@ export class CadastroComponent implements OnInit {
     return true
   }
 
+
+  
+
+
   styliz() {
     if (this.verifyPasswords()) {
       this.warningMessage = ''
@@ -47,4 +51,5 @@ export class CadastroComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
 }
