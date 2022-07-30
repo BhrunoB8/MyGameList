@@ -29,6 +29,7 @@ import { RankingComponent } from './pages/ranking/ranking.component';
 import { EvaluateComponent } from './sharepages/Modals/evaluate/evaluate.component';
 import { AuthGuardService, LoggedGuard } from './auth-guard.service';
 import { AuthService } from './auth-service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { AuthService } from './auth-service';
     MatButtonModule,
     MatPaginatorModule,
     FormsModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    HttpClientModule
   ],
   providers: [CookieService, AuthGuardService, LoggedGuard, AuthService,],
   bootstrap: [AppComponent]

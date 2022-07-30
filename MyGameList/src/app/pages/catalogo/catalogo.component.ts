@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Jogo } from 'src/app/Models/Jogo';
 import { EvaluateComponent } from 'src/app/sharepages/Modals/evaluate/evaluate.component';
-
+import {  HttpClient } from '@angular/common/http'
 @Component({
   selector: 'app-catalogo',
   templateUrl: './catalogo.component.html',
@@ -10,7 +10,7 @@ import { EvaluateComponent } from 'src/app/sharepages/Modals/evaluate/evaluate.c
 })
 export class CatalogoComponent implements OnInit {
 
-  constructor() { }
+  constructor( private http: HttpClient) { }
   // constructor(public dialog: MatDialog) { }
 
   // addGameEvaluation(): void {
@@ -23,7 +23,16 @@ export class CatalogoComponent implements OnInit {
   //   });
   // }
 
+
   ngOnInit(): void {
+  }
+
+  
+  teste(){
+    var item;
+    this.http.get <Jogo>('http://10.2.168.200:3030/games/list').subscribe((e)=>{console.log(e)})
+    
+    console.log(item)
   }
 
   list = [
