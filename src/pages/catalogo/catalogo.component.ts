@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Jogo } from 'src/app/Models/Jogo';
-import { EvaluateComponent } from 'src/app/sharepages/Modals/evaluate/evaluate.component';
+import { Jogo } from 'src/Models/Jogo';
+import { EvaluateComponent } from 'src/sharepages/Modals/evaluate/evaluate.component';
 import {  HttpClient } from '@angular/common/http'
 @Component({
   selector: 'app-catalogo',
@@ -27,13 +27,6 @@ export class CatalogoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
-  teste(){
-    var item;
-    this.http.get <Jogo>('http://10.2.168.200:3030/games/list').subscribe((e)=>{console.log(e)})
-    
-    console.log(item)
-  }
 
   list = [
     new Jogo(`Dead by Daylight`, "\\assets\\Dead_By_Daylight.png"),

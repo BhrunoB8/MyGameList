@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Jogo } from 'src/app/Models/Jogo';
+import { Jogo } from 'src/Models/Jogo';
 
 @Component({
   selector: 'app-home',

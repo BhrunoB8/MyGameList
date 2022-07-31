@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Jogo } from 'src/app/Models/Jogo';
+import { Jogo } from 'src/Models/Jogo';
 
 @Component({
-  selector: 'app-pag-platinou',
-  templateUrl: './pag-platinou.component.html',
-  styleUrls: ['./pag-platinou.component.css']
+  selector: 'app-pag-fav',
+  templateUrl: './pag-fav.component.html',
+  styleUrls: ['./pag-fav.component.css']
 })
-export class PagPlatinouComponent implements OnInit {
+export class PagFavComponent implements OnInit {
 
   constructor() { }
 
@@ -17,5 +17,5 @@ export class PagPlatinouComponent implements OnInit {
     new Jogo('Resident Evil 2', "\\assets\\re2rmk.png"),
     new Jogo('GTA V', "\\assets\\Grand_Theft_Auto_V_capa.png"),
     new Jogo('Red Dead 2', "\\assets\\reddead.jpg"),
-    new Jogo('Stardew Valley', "\\assets\\stardewValley.png")]
+  ]
 }
