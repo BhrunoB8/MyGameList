@@ -1,10 +1,11 @@
+import { HttpClient } from "@angular/common/http";
 import { EventEmitter, Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { CookieService } from "ngx-cookie-service";
 
 @Injectable()
 export class AuthService {
-    constructor(private cookie: CookieService, private router: Router) {
+    constructor(private cookie: CookieService, private router: Router, private http: HttpClient) {
     }
 
     loggedIn: boolean = this.verify();
@@ -20,12 +21,26 @@ export class AuthService {
     }
 
     login(user: string, password: string) {
-        if (user == 'admin' && password == 'admin') {
-            this.cookie.set('token', user);
-            this.loggedIn = true;
-            this.mostrarForm.emit(false);
-            this.mostrarProfile.emit(true)
-            return true;
+        if (user !== '' && password !== '') {
+            this.http.post('http://10.2.170.39:3030/auth', {
+                "email": String(user),
+                "password": String(password)
+            }).subscribe(resultado => {
+                this.cookie.set('token', user);
+                this.loggedIn = true;
+                this.mostrarForm.emit(false);
+                this.mostrarProfile.emit(true)
+                this.router.navigateByUrl('/home')
+
+                return true;
+
+            }, erro => {
+                console.log(erro.status)
+                return false;
+
+            });
+            return false;
+
         } else {
             return false;
         }

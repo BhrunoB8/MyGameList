@@ -17,9 +17,10 @@ export class LoginComponent implements OnInit {
   currentPassword: string;
   currentUsername: string;
 
+
+
   login(){
     if(this.auth.login(this.currentUsername, this.currentPassword)){
-      this.router.navigateByUrl('/home')
     }
   }
 }
