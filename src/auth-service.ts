@@ -50,11 +50,11 @@ export class AuthService {
 
     login(user: string, password: string) {
         if (user !== '' && password !== '') {
-            this.http.post(`${this.apiURL}/auth`, {
+            this.http.post<any>(`${this.apiURL}/auth`, {
                 "email": String(user),
                 "password": String(password)
             }).subscribe(resultado => {
-                this.cookie.set('token', user);
+                this.cookie.set('token', resultado.token);
                 this.loggedIn = true;
                 this.mostrarForm.emit(false);
                 this.mostrarProfile.emit(true)
