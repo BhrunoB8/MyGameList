@@ -18,12 +18,8 @@ export class CadastroComponent implements OnInit {
 
   getAllValues() {
     if (this.verifyPasswords()) {
-      console.log(this.currentUser, this.currentEmail, this.currentPassword, this.currentConfirmPassword);
-      if (this.auth.login(this.currentUser, this.currentPassword)) {
-        this.router.navigateByUrl('/home')
-      } else {
-        alert('Erro')
-      }
+      this.auth.register(this.currentUser, this.currentPassword, this.currentEmail)
+
     }
   }
 
@@ -35,7 +31,7 @@ export class CadastroComponent implements OnInit {
   }
 
 
-  
+
 
 
   styliz() {
@@ -51,5 +47,5 @@ export class CadastroComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
+
 }
