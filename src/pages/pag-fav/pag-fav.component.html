@@ -7,12 +7,12 @@
     </div>
 
     <div id="row" class="row" fxLayout="row wrap" fxLayoutAlign="space-evenly">
-        <div *ngFor="let item of list">
+        <div *ngFor="let item of jogos">
       
-          <mat-card class="card">
+          <mat-card class="example-card">
               <mat-card-header>
               </mat-card-header>
-              <img mat-card-image src={{item.caminho}}>
+              <img mat-card-image src={{item.image}}>
               <mat-card-title>{{item.name}}</mat-card-title>
               <mat-card-actions>
               <button mat-button><mat-icon>favorite_border</mat-icon></button>

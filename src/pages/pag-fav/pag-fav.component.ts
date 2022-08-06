@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 import { Jogo } from 'src/Models/Jogo';
 
 @Component({
@@ -8,14 +10,17 @@ import { Jogo } from 'src/Models/Jogo';
 })
 export class PagFavComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient, private cookie: CookieService) {
+
+  }
 
   ngOnInit(): void {
+    this.http.get("http://10.2.170.39:3030/games/fav-games", { headers: { authorization: `Bearer ${this.cookie.get('token')}` } }).subscribe(e => {
+      this.jogos = e
+    })
+    console.log(this.jogos)
   }
-  list = [
-    new Jogo(`Dead by Daylight`, "\\assets\\Dead_By_Daylight.png"),
-    new Jogo('Resident Evil 2', "\\assets\\re2rmk.png"),
-    new Jogo('GTA V', "\\assets\\Grand_Theft_Auto_V_capa.png"),
-    new Jogo('Red Dead 2', "\\assets\\reddead.jpg"),
-  ]
+
+
+  jogos: any
 }

@@ -4,6 +4,11 @@
    margin-right: 15%;
 }
 
+.example-card {
+   max-width: 200px;
+   margin: 5px;
+ }
+
 .row{
 margin-top: 20px;
 }
