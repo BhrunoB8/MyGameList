@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Jogo } from 'src/Models/Jogo';
 import { EvaluateComponent } from 'src/sharepages/Modals/evaluate/evaluate.component';
-import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http'
 import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-catalogo',
@@ -13,34 +13,60 @@ export class CatalogoComponent implements OnInit {
 
   constructor(private http: HttpClient, private cookie: CookieService) { }
   gameList: any;
-  headers = new HttpHeaders({'Content-Type':'application/json; charset=utf-8' });// constructor(public dialog: MatDialog) { }
-
-// addGameEvaluation(): void {
-//   const dialogRef = this.dialog.open(EvaluateComponent, {
-//     width: '250px',
-//   });
-
-//   dialogRef.afterClosed().subscribe(result => {
-//       console.log('The dialog was closed');
-//   });
-// }
+  gameAdd: any[] = [];
 
 
-ngOnInit(): void {
-  this.http.get('http://10.2.170.39:3030/games/list').subscribe(result => {
-    this.gameList = result
+  // addGameEvaluation(): void {
+  //   const dialogRef = this.dialog.open(EvaluateComponent, {
+  //     width: '250px',
+  //   });
 
-    console.log(this.gameList)
-  })
-}
+  //   dialogRef.afterClosed().subscribe(result => {
+  //       console.log('The dialog was closed');
+  //   });
+  // }
 
 
-favGame(id: string) {
-  console.log(this.cookie.get('token'))
-  this.http.patch(`http://10.2.170.39:3030/games/fav-add/${id}`, { headers: { Authorization: 'Bearer ' + this.cookie.get('token') } }).subscribe(res => {
-    console.log(res)
-  })
-}
+  ngOnInit(): void {
+    this.http.get('http://10.2.170.39:3030/games/list').subscribe(result => {
+      this.gameList = result
+
+    })
+  }
+
+  button = false;
+
+
+  favGame(id: string) {
+    this.http.patch(`http://10.2.170.39:3030/games/fav-add/${id}`, {}, {
+      headers: { Authorization: 'Bearer ' + this.cookie.get('token') }
+    }).subscribe(res => {
+      const teste: any = res;
+
+      if (String(teste.message).includes(' vinculado')) {
+        this.gameAdd.push(String(id))
+
+      } else if (String(teste.message).includes('desvinculado')) {
+        const newList = this.gameAdd.filter(e => e !== String(id))
+        this.gameAdd = newList;
+      }
+
+      console.log(this.gameAdd)
+      this.button = !this.button;
+    })
+  }
+
+  verifyIcon(item: any) {
+
+
+    if (this.gameAdd.find(e => { return e == item.id })) {
+      return "color: red;"
+    } else {
+      return "color: black"
+    }
+
+
+  }
 
 
   // list = [
