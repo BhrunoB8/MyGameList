@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
+import { ProfileInfoService } from 'src/services/profile/profile-info.service';
 
 @Component({
   selector: 'app-profile',
@@ -8,11 +9,13 @@ import { Chart } from 'chart.js';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(private profile: ProfileInfoService) { }
 
   ngOnInit(): void {
-
+    this.tprofile = this.profile.getUserInfo()
+    console.log(this.tprofile)
   }
+  tprofile: any
 }
 
 

@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Jogo } from 'src/Models/Jogo';
+import { ApiService } from 'src/services/api/api.service';
+import { ProfileInfoService } from 'src/services/profile/profile-info.service';
 
 @Component({
   selector: 'app-pag-fav',
@@ -10,17 +12,18 @@ import { Jogo } from 'src/Models/Jogo';
 })
 export class PagFavComponent implements OnInit {
 
-  constructor(private http: HttpClient, private cookie: CookieService) {
+  constructor(private http: HttpClient, private cookie: CookieService, private profileInfo: ProfileInfoService) {
 
   }
-
-  ngOnInit(): void {
-    this.http.get("http://10.2.170.39:3030/games/fav-games", { headers: { authorization: `Bearer ${this.cookie.get('token')}` } }).subscribe(e => {
-      this.jogos = e
-    })
-    console.log(this.jogos)
-  }
-
 
   jogos: any
+
+
+  ngOnInit(): void {
+    console.log(this.profileInfo.getFavoriteUserGames())
+    this.jogos = this.profileInfo.getFavoriteUserGames()
+  }
+
+
+
 }

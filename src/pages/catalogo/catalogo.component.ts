@@ -4,6 +4,8 @@ import { Jogo } from 'src/Models/Jogo';
 import { EvaluateComponent } from 'src/sharepages/Modals/evaluate/evaluate.component';
 import { HttpClient } from '@angular/common/http'
 import { CookieService } from 'ngx-cookie-service';
+import { ApiService } from 'src/services/api/api.service';
+import { ProfileInfoService } from 'src/services/profile/profile-info.service';
 @Component({
   selector: 'app-catalogo',
   templateUrl: './catalogo.component.html',
@@ -11,8 +13,9 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class CatalogoComponent implements OnInit {
 
-  constructor(private http: HttpClient, private cookie: CookieService) { }
+  constructor(private http: HttpClient, private cookie: CookieService, private api: ApiService, private profileInfo: ProfileInfoService) { }
   gameList: any;
+  userGames: any[] = []
   gameAdd: any[] = [];
 
 
@@ -28,38 +31,48 @@ export class CatalogoComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.http.get('http://10.2.170.39:3030/games/list').subscribe(result => {
+    this.http.get(`${this.api.getRoute()}/games/list`).subscribe(result => {
       this.gameList = result
-
     })
+    this.userGames = this.profileInfo.getFavoriteUserGames()
   }
 
   button = false;
 
 
-  favGame(id: string) {
-    this.http.patch(`http://10.2.170.39:3030/games/fav-add/${id}`, {}, {
+  favGame(item: any) {
+    console.log(item)
+
+
+    this.http.patch(`${this.api.getRoute()}/games/fav-add/${item.id}`, {}, {
       headers: { Authorization: 'Bearer ' + this.cookie.get('token') }
     }).subscribe(res => {
       const teste: any = res;
 
-      if (String(teste.message).includes(' vinculado')) {
-        this.gameAdd.push(String(id))
+      console.log(res)
 
+      if (String(teste.message).includes(' vinculado')) {
+        this.userGames.push(item)
+        this.profileInfo.setFavoriteUserGames(this.userGames)
       } else if (String(teste.message).includes('desvinculado')) {
-        const newList = this.gameAdd.filter(e => e !== String(id))
-        this.gameAdd = newList;
+
+        this.profileInfo.setFavoriteUserGames(this.profileInfo.getFavoriteUserGames().filter(e=> e.id !== item.id ))
+
+        const newList = this.userGames.filter(e => e.id !== item.id)
+        this.userGames = newList;
       }
 
-      console.log(this.gameAdd)
       this.button = !this.button;
+    }, erro=>{
+      console.log(erro)
     })
   }
 
   verifyIcon(item: any) {
+    // console.log(item)
 
 
-    if (this.gameAdd.find(e => { return e == item.id })) {
+    if (this.userGames.find(e =>  e.id == item.id )) {
       return "color: red;"
     } else {
       return "color: black"

@@ -1,12 +1,13 @@
 import { HttpClient } from "@angular/common/http";
 import { EventEmitter, Injectable } from "@angular/core";
+import { ApiService } from "./services/api/api.service";
 import { Router } from "@angular/router";
 import { CookieService } from "ngx-cookie-service";
+import { ProfileInfoService } from "./services/profile/profile-info.service";
 
 @Injectable()
 export class AuthService {
-    readonly apiURL = 'http://10.2.170.39:3030';
-    constructor(private cookie: CookieService, private router: Router, private http: HttpClient) {
+    constructor(private cookie: CookieService, private router: Router, private http: HttpClient, private api: ApiService, private profileInfo: ProfileInfoService) {
     }
 
 
@@ -26,7 +27,7 @@ export class AuthService {
     register(user: string, password: string, email: string) {
 
         if (
-            this.http.post(`${this.apiURL}/user`, {
+            this.http.post(`${this.api.getRoute()}/user`, {
 
                 "username": user,
                 "email": email,
@@ -50,11 +51,17 @@ export class AuthService {
 
     login(user: string, password: string) {
         if (user !== '' && password !== '') {
-            this.http.post<any>(`${this.apiURL}/auth`, {
+            this.http.post<any>(`${this.api.getRoute()}/auth`, {
                 "email": String(user),
                 "password": String(password)
             }).subscribe(resultado => {
                 this.cookie.set('token', resultado.token);
+
+
+                this.profileInfo.setFavoriteUserGames(resultado.games)
+                this.profileInfo.setUserInfo(resultado.user)
+
+
                 this.loggedIn = true;
                 this.mostrarForm.emit(false);
                 this.mostrarProfile.emit(true)
