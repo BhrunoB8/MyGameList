@@ -12,6 +12,11 @@ mat-card-title{
     text-align: center;
 }
 
+.generalList{
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
 mat-card-actions{
     text-align: center;
 }
