@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service'
-import { AuthService } from 'src/auth-service';
+import { AuthService } from '../../services/auth/auth-service';
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',

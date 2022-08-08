@@ -1,10 +1,9 @@
 import { HttpClient } from "@angular/common/http";
 import { EventEmitter, Injectable } from "@angular/core";
-import { ApiService } from "./services/api/api.service";
 import { Router } from "@angular/router";
 import { CookieService } from "ngx-cookie-service";
-import { ProfileInfoService } from "./services/profile/profile-info.service";
-
+import { ProfileInfoService } from "../profile/profile-info.service";
+import { ApiService } from "../api/api.service";
 @Injectable()
 export class AuthService {
     constructor(private cookie: CookieService, private router: Router, private http: HttpClient, private api: ApiService, private profileInfo: ProfileInfoService) {

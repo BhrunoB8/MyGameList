@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuardService, LoggedGuard } from './auth-guard.service';
+import { AuthGuardService, LoggedGuard } from './services/auth/auth-guard.service';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { CatalogoComponent } from './pages/catalogo/catalogo.component';
 import { HomeComponent } from './pages/home/home.component';

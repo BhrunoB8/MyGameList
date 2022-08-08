@@ -27,8 +27,8 @@ import { CookieService } from 'ngx-cookie-service'
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { RankingComponent } from './pages/ranking/ranking.component';
 import { EvaluateComponent } from './sharepages/Modals/evaluate/evaluate.component';
-import { AuthGuardService, LoggedGuard } from './auth-guard.service';
-import { AuthService } from './auth-service';
+import { AuthGuardService, LoggedGuard } from './services/auth/auth-guard.service';
+import { AuthService } from './services/auth/auth-service';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
