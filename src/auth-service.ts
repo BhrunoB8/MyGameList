@@ -81,6 +81,8 @@ export class AuthService {
 
     logout() {
         this.cookie.delete('token');
+        this.profileInfo.clear()
+
         this.loggedIn = false;
         this.mostrarProfile.emit(false)
         this.mostrarForm.emit(true);

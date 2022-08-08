@@ -9,7 +9,6 @@ export class ProfileInfoService {
    userInfo: any = ''
    favoriteUserGames: any[] = []
 
-
   setUserInfo(info: any) {
     this.userInfo = info
   }
@@ -26,6 +25,10 @@ export class ProfileInfoService {
     return this.favoriteUserGames;
   }
 
+  clear(){
+    this.userInfo = ''
+    this.favoriteUserGames = []
+  }
 
 
 }
