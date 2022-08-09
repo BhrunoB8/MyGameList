@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Jogo } from 'src/Models/Jogo';
+import { ApiService } from 'src/services/api/api.service';
 
 @Component({
   selector: 'app-home',
@@ -8,20 +10,19 @@ import { Jogo } from 'src/Models/Jogo';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { 
-// this.Jogo = new Jogo();
+  constructor(private http: HttpClient, private api: ApiService) {
+    // this.Jogo = new Jogo();
   }
 
   ngOnInit(): void {
+    this.http.get<any>(`${this.api.getRoute()}/games/released`).subscribe(res => {
+      this.list = res;
+    })
   }
 
   // list=[{nome:"Dead by Daylight"}, {nome:"Resident Evil"}, {nome: "Grand Theft Auto V"}];
 
-  list = [
-    new Jogo(`Dead by Daylight`, "\\assets\\Dead_By_Daylight.png"),
-    new Jogo('Resident Evil 2', "\\assets\\re2rmk.png"),
-    new Jogo('GTA V', "\\assets\\Grand_Theft_Auto_V_capa.png"),
-  ]
+  list: any[] = []
 
 }
 
