@@ -6,6 +6,9 @@
 
     <mat-card class="example-card">
       <mat-card-header>
+        <button mat-button (click)="openComments(item)">
+          <mat-icon>question_answer</mat-icon>
+        </button>
       </mat-card-header>
       <img mat-card-image src={{item.image}} alt="Photo of a Shiba Inu">
       <mat-card-title>{{item.name}}</mat-card-title>
@@ -16,6 +19,7 @@
         <button mat-button (click)="openModal(item)">
           <mat-icon>star_border</mat-icon>
         </button>
+        
       </mat-card-actions>
     </mat-card>
 

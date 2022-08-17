@@ -32,6 +32,7 @@ import { AuthService } from './services/auth/auth-service';
 import { HttpClientModule } from '@angular/common/http';
 import { PopUpComponent } from './app/pop-up/pop-up.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { PopCommentsComponent } from './app/pop-comments/pop-comments.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     RankingComponent,
     EvaluateComponent,
     PopUpComponent,
+    PopCommentsComponent,
   ],
   imports: [
     AppRoutingModule,

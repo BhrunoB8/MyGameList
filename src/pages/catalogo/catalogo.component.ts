@@ -7,6 +7,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { ApiService } from 'src/services/api/api.service';
 import { ProfileInfoService } from 'src/services/profile/profile-info.service';
 import { PopUpComponent } from 'src/app/pop-up/pop-up.component';
+import { PopCommentsComponent } from 'src/app/pop-comments/pop-comments.component';
 @Component({
   selector: 'app-catalogo',
   templateUrl: './catalogo.component.html',
@@ -30,15 +31,28 @@ export class CatalogoComponent implements OnInit {
   //   });
   // }
 
-  openModal(item: any) {
+  openComments(item: any) {
 
-
-
-    this.dialog.open(PopUpComponent, { data: {
-      name: item.name,
-      gameId: item.id
-    } })
+    console.log(item)
+    this.dialog.open(PopCommentsComponent, {
+      data: {
+        gameId: item.id,
+        gameName: item.name
+      }
+    })
   }
+
+  openModal(item: any) {
+    this.dialog.open(PopUpComponent, {
+      data: {
+        name: item.name,
+        gameId: item.id
+      }
+    })
+  }
+
+
+
 
   ngOnInit(): void {
     this.http.get(`${this.api.getRoute()}/games/list`).subscribe(result => {

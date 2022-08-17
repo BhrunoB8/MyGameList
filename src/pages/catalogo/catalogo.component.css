@@ -8,6 +8,13 @@
   background-size: cover;
 }
 
+
+.example-card mat-card-header{
+  justify-content: center;
+  text-align: center;
+}
+
+
 mat-card-title{
     text-align: center;
 }

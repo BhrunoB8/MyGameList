@@ -1,0 +1,19 @@
+<div class="container">
+    <h1 style="text-align: center;">{{gameName}}</h1>
+
+    <div *ngFor="let item of comments">
+
+        <div class="container-line">
+            <a>
+
+                <strong>{{item.comment}}</strong>
+            </a>
+
+            <p>
+               Nota: <strong>{{item.rate}}</strong>
+            </p>
+
+        </div>
+
+    </div>
+</div>
