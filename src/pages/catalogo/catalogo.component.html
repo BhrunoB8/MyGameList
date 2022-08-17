@@ -13,7 +13,7 @@
         <button mat-button (click)="favGame(item)">
           <mat-icon [style]="verifyIcon(item)">favorite_border</mat-icon>
         </button>
-        <button mat-button>
+        <button mat-button (click)="openModal(item)">
           <mat-icon>star_border</mat-icon>
         </button>
       </mat-card-actions>

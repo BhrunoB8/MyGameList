@@ -30,6 +30,8 @@ import { EvaluateComponent } from './sharepages/Modals/evaluate/evaluate.compone
 import { AuthGuardService, LoggedGuard } from './services/auth/auth-guard.service';
 import { AuthService } from './services/auth/auth-service';
 import { HttpClientModule } from '@angular/common/http';
+import { PopUpComponent } from './app/pop-up/pop-up.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,7 @@ import { HttpClientModule } from '@angular/common/http';
     ProfileComponent,
     RankingComponent,
     EvaluateComponent,
+    PopUpComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -62,7 +65,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatPaginatorModule,
     FormsModule,
     MatProgressBarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [CookieService, AuthGuardService, LoggedGuard, AuthService,],
   bootstrap: [AppComponent]

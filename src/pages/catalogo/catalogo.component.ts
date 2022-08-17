@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http'
 import { CookieService } from 'ngx-cookie-service';
 import { ApiService } from 'src/services/api/api.service';
 import { ProfileInfoService } from 'src/services/profile/profile-info.service';
+import { PopUpComponent } from 'src/app/pop-up/pop-up.component';
 @Component({
   selector: 'app-catalogo',
   templateUrl: './catalogo.component.html',
@@ -13,7 +14,7 @@ import { ProfileInfoService } from 'src/services/profile/profile-info.service';
 })
 export class CatalogoComponent implements OnInit {
 
-  constructor(private http: HttpClient, private cookie: CookieService, private api: ApiService, private profileInfo: ProfileInfoService) { }
+  constructor(private dialog: MatDialog, private http: HttpClient, private cookie: CookieService, private api: ApiService, private profileInfo: ProfileInfoService) { }
   gameList: any;
   userGames: any[] = []
   gameAdd: any[] = [];
@@ -29,6 +30,15 @@ export class CatalogoComponent implements OnInit {
   //   });
   // }
 
+  openModal(item: any) {
+
+
+
+    this.dialog.open(PopUpComponent, { data: {
+      name: item.name,
+      gameId: item.id
+    } })
+  }
 
   ngOnInit(): void {
     this.http.get(`${this.api.getRoute()}/games/list`).subscribe(result => {
@@ -49,21 +59,20 @@ export class CatalogoComponent implements OnInit {
     }).subscribe(res => {
       const teste: any = res;
 
-      console.log(res)
 
       if (String(teste.message).includes(' vinculado')) {
         this.userGames.push(item)
         this.profileInfo.setFavoriteUserGames(this.userGames)
       } else if (String(teste.message).includes('desvinculado')) {
 
-        this.profileInfo.setFavoriteUserGames(this.profileInfo.getFavoriteUserGames().filter(e=> e.id !== item.id ))
+        this.profileInfo.setFavoriteUserGames(this.profileInfo.getFavoriteUserGames().filter(e => e.id !== item.id))
 
         const newList = this.userGames.filter(e => e.id !== item.id)
         this.userGames = newList;
       }
 
       this.button = !this.button;
-    }, erro=>{
+    }, erro => {
       console.log(erro)
     })
   }
@@ -72,7 +81,7 @@ export class CatalogoComponent implements OnInit {
     // console.log(item)
 
 
-    if (this.userGames.find(e =>  e.id == item.id )) {
+    if (this.userGames.find(e => e.id == item.id)) {
       return "color: red;"
     } else {
       return "color: black"

@@ -1,0 +1,39 @@
+<div class="container">
+    <h1 class="title">
+        {{gameName}}
+    </h1>
+
+
+
+    <div class="comment-container">
+
+        <p>
+            Comentário
+        </p>
+        <div class="comment">
+            <textarea placeholder="Descreva sua experiência com o jogo"  [(ngModel)]="comment"></textarea>
+        </div>
+
+
+
+
+
+        <div *ngFor="let item of grades">
+            <div class="grades-div">
+                <a (click)="change(item)" [style]="stylez(item)">{{item.desc}}</a>
+
+            </div>
+        </div>
+
+        <button mat-button (click)="close()" class="comment-button">
+            Avaliar
+        </button>
+
+
+    </div>
+
+
+
+
+
+</div>

@@ -8,7 +8,6 @@ import { ProfileInfoService } from './services/profile/profile-info.service';
 
 
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

@@ -9,7 +9,7 @@ export class ApiService {
   constructor() { }
 
   getRoute() {
-    return 'http://192.168.1.118:3030'
+    return 'http://192.168.1.23:3030'
   }
 
 

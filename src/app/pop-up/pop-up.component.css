@@ -1,0 +1,56 @@
+.container {
+    width: 360px;
+    height: 500px;
+}
+
+.title {
+    text-align: center;
+}
+
+.comment-container {
+    justify-content: center;
+    text-align: center;
+}
+
+.comment-input {
+    height: 250px;
+    text-align: start;
+
+
+}
+
+
+
+.comment textarea {
+    width: 80%;
+    max-width: 680px;
+    padding: 20px;
+    border: 1px solid #b5b5b5;
+    outline: none;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    resize: none;
+}
+
+.comment textarea {
+    height: 169px;
+}
+
+.comment textarea:focus {
+    border: 1px solid #32babe;
+    box-shadow: 0 0 0 2px #32babe;
+}
+
+.comment-button {
+    top: 60px;
+}
+
+.grades-div {
+    flex-direction: row;
+}
+
+.grades-div a:hover {
+    text-decoration: none;
+    color: blue;
+    justify-content: center;
+}
